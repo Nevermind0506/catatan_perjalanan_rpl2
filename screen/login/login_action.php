@@ -11,7 +11,7 @@ $connection = new database();
 
 $action = $_GET['action'];
 if ($action == "log") {
-    $connection->LoginCheck($_POST['username_input'], $_POST['password_input']);
+    $connection->LoginCheck($_POST['username_input'], md5($_POST['password_input']));
 }
 die;
 

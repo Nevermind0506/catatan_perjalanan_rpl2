@@ -1,4 +1,9 @@
+<?php session_start(); ?>
 <?php include "../../utils/start.php"; ?>
+
+<?php if (!empty($_SESSION['nikLogin'])) {
+    header('location: ../home/home_screen.php');
+} ?>
 
 
 
@@ -26,12 +31,12 @@
                 <!-- nama lengkap -->
                 <div class="mb-3">
                     <label for="nmLengkap" class="form-label ">Nama Lengkap</label>
-                    <input name="nama_lengkap_input" type="text" class="form-control form-control-md" id="nmLengkap" placeholder="Masukan Nama Lengkap">
+                    <input name="nama_lengkap_input" type="text" class="form-control form-control-md" id="nmLengkap" placeholder="Masukan Nama Lengkap" required>
                 </div>
                 <!-- email -->
                 <div class="mb-3">
                     <label for="email" class="form-label ">Email</label>
-                    <input name="email_input" type="email" class="form-control form-control-md" id="email" placeholder="Masukan alamat email">
+                    <input name="email_input" type="email" class="form-control form-control-md" id="email" placeholder="Masukan alamat email" required>
                 </div>
                 <!-- jenis kelamin -->
                 <div class="mb-3">
@@ -46,34 +51,36 @@
                 <!-- nomo telepon -->
                 <div class="mb-3">
                     <label for="noTelp" class="form-label ">Nomor Telepon</label>
-                    <input name="no_telp_input" type="number" class="form-control form-control-md" id="noTelp" placeholder="Masukan nomor telepon">
+                    <input name="no_telp_input" type="number" class="form-control form-control-md" id="noTelp" placeholder="Masukan nomor telepon" required>
                 </div>
                 <!-- tanggal lahir -->
                 <div class="mb-3">
                     <label for="tglLahir" class="form-label ">Tanggal Lahir</label>
-                    <input name="tgl_lahir_input" type="date" class="form-control form-control-md" id="tglLahir" placeholder="Masukan tanggal lahir">
+                    <input name="tgl_lahir_input" type="date" class="form-control form-control-md" id="tglLahir" placeholder="Masukan tanggal lahir" required>
                 </div>
                 <!-- tempat lahir -->
                 <div class="mb-3">
                     <label for="tmpLahir" class="form-label ">Tempat Lahir</label>
-                    <input name="tmp_lahir_input" type="text" class="form-control form-control-md" id="tmpLahir" placeholder="Masukan tempat lahir">
+                    <input name="tmp_lahir_input" type="text" class="form-control form-control-md" id="tmpLahir" placeholder="Masukan tempat lahir" required>
                 </div>
                 <!-- alamat -->
                 <div class="mb-3">
                     <label for="alamat" class="form-label ">Alamat</label>
-                    <textarea name="alamat_input" id="alamat" class="form-control" placeholder="Masukan Alamat"></textarea>
+                    <textarea name="alamat_input" id="alamat" class="form-control" placeholder="Masukan Alamat" required></textarea>
                 </div>
 
 
 
                 <!-- submit button -->
                 <div class="mb-3">
-                    <button class="btn btn-primary" type="submit">Kirim</button>
+                    <button class="btn btn-primary" type="submit">Daftar</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<?php include "../widgets/footer.php" ?>
 
 
 

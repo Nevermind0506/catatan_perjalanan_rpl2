@@ -1,7 +1,23 @@
 <?php session_start(); ?>
+<?php if (!empty($_SESSION['nikLogin'])) {
+
+    header("location: ../home/home_screen.php");
+} else {
+    $_SESSION['msg'] = null;
+} ?>
 <?php include "../../utils/start.php"; ?>
 
+<style>
+    @media (max-width:1080px) {
+        #gambar1 {
+            order: 1;
+        }
 
+        #deskripsi1 {
+            order: 2;
+        }
+    }
+</style>
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow fixed-top ">
     <div class="container">
@@ -38,14 +54,14 @@
     <div class="col-lg-12 pt-5" style="background-image: linear-gradient(#39a69cff, #9ec862ff);">
         <div class="container">
             <div class="row pt-5 my-4">
-                <div class="col-lg-8">
+                <div class="col-lg-8" id="deskripsi1">
                     <div class="row py-auto">
                         <h1 class="text-white text mt-5">SATUSEHAT Dasbor</h1>
                         <h1 class="text-white text">untuk Satu Indonesia</h1>
                         <p class="text-white mt-3">Pusat data kesehatan Indonesia yang menyajikan informasi interaktif dalam bentuk dasbor.</p>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4" id="gambar1">
                     <img class="img-fluid" src="../../assets/images/home-web-img.png" style="width: 350px;" alt="">
 
                 </div>
